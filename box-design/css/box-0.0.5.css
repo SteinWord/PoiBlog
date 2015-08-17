@@ -1,0 +1,81 @@
+/************
+Grid Dedign: 2,4,8
+COLOR PANEL
+************/
+
+html,body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto","GenWeb",sans-serif;
+}
+
+*:focus {
+  outline: none;
+}
+
+br.s {
+  display: none;
+}
+@media screen and (max-width: 480px) {
+  br.s {
+    display: inline;
+  }
+}
+
+* {
+  word-break: break-all;
+  box-sizing: border-box;
+}
+
+h1,h2,h3,h4,h5,h6,p,span,strong,a {
+  margin: 0;
+  padding: 0;
+  line-height: 1.2em;
+  letter-spacing: 1.96px;
+  font-size: inherit;
+  color: inherit;
+  text-decoration: none;
+}
+.center {
+  text-align: center;
+  margin: inherit auto;
+}
+
+box-header,.box-header,
+box-contents,.box-contents,
+box-footer,box-footer {
+  display: block;
+  width: 100%;
+}
+
+box-header,.box-header {
+  padding: 16px;
+  top: 0;
+  left: 0;
+  position: fixed;
+  height: 80px;
+  background: inherit;
+  z-index: 5000;
+}
+  box-header *, .box-header * {
+    margin-right: 16px;
+    vertical-align: top;
+    max-height: 48px;
+  }
+  box-header h1, .box-header h1 {
+    line-height: 2em;
+    font-size: 24px;
+    display: inline;
+  }
+
+box-contents, .box-contents {
+  margin-top: 80px;
+}
+
+box-footer,.box-footer {
+  height: 100vh;
+  padding-top: 45vh;
+}
+  box-footer p, .box-footer p {
+    line-height: 2em;
+  }

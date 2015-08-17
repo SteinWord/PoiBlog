@@ -1,0 +1,538 @@
+/************
+Grid Dedign: 2,4,8
+COLOR PANEL
+************/
+
+html,body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto","GenWeb",sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+*:focus {
+  outline: none;
+}
+
+ol, ul, li {
+  list-style-type: none;
+}
+
+ol li {
+  color: rgb(0,150,80);
+  list-style-type: decimal;
+}
+
+ul li {
+  color: rgb(0,150,80);
+  list-style-type: circle;
+}
+
+br.s {
+  display: none;
+}
+
+@media screen and (max-width: 480px) {
+  br.s {
+    display: inline;
+  }
+}
+
+* {
+  word-break: break-all;
+  box-sizing: border-box;
+  transition-timing-function: cubic-bezierr(.55,0,.1,1);
+}
+
+h1,h2,h3,h4,h5,h6,p,span,strong,a {
+  margin: 0;
+  padding: 0;
+  line-height: 2em;
+  letter-spacing: .07em;
+  font-size: inherit;
+  color: inherit;
+  text-decoration: none;
+}
+
+p,span,strong,a {
+  line-height: inherit;
+}
+
+h2 {
+  font-size: 32px;
+  line-height: 1em;
+  margin: 32px 0 16px 0;
+}
+
+h3 {
+  font-size: 24px;
+  line-height: calc(1em + 1em / 3);
+  margin-top: 16px;
+}
+
+p {
+  margin-top: 16px;
+}
+
+.center {
+  text-align: center;
+  margin: inherit auto;
+}
+
+form {
+  font-size: 0;
+  height: auto;
+}
+form * {
+  vertical-align: top;
+}
+input {
+  border-radius: 0;
+}
+input[type=text] {
+  font-size: 16px;
+  /* line-height: 1em; */
+  border: none;
+  -webkit-appearance: none;
+  display: inline-block;
+  padding: 0;
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  font-weight: bold;
+  height: 32px;
+  margin: 16px;
+  margin-bottom: 0;
+}
+input[type=password] {
+  font-size: 16px;
+  /* *line-height: 1em; */
+  border: none;
+  -webkit-appearance: none;
+  display: inline-block;
+  padding: 0;
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  font-weight: bold;
+  height: 32px;
+  margin: 16px;
+  margin-bottom: 0;
+}
+input[type=submit] {
+  margin: 16px;
+  background: transparent;
+  padding: 8px 16px;
+  height: 32px;
+  font-weight: bold;
+  font-size: 16px;
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: .09em;
+  line-height: 1em;
+  cursor: pointer;
+  border-style: solid;
+  border-width: 2px;
+  margin-bottom: 0;
+}
+input[type=submit]:hover {
+  color: rgb(255,255,255)
+}
+input[type=checkbox] {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 16px;
+  background: transparent;
+  padding: 8px 16px;
+  height: 32px;
+  width: 96px;
+  font-weight: bold;
+  font-size: 16px;
+  text-align: center;
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: .09em;
+  line-height: 1em;
+  cursor: pointer;
+  border-style: solid;
+  border-width: 2px;
+  margin-bottom: 0;
+}
+input[type=checkbox]:before {
+  content: "いいえ";
+}
+input[type=checkbox]:checked:before {
+  content: "はい";
+  color: rgb(255,255,255);
+}
+input[type=checkbox]:hover {
+  /* color: rgb(255,255,255); */
+}
+div[type=file] {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 16px;
+  background: transparent;
+  padding: 8px 16px;
+  height: 32px;
+  font-weight: bold;
+  font-size: 16px;
+  text-align: center;
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: .09em;
+  line-height: 1em;
+  cursor: pointer;
+  border-style: solid;
+  border-width: 2px;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 0;
+}
+div[type=file]:hover {
+  color: rgb(255,255,255);
+}
+div[type=file]:active {
+  color: rgb(255,255,255);
+}
+div[type=file] input[type=file] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  opacity: 0;
+}
+
+box-text,.box-text {
+  display: inline-block;
+  padding: 0 16px 32px 16px;
+  font-size: 16px;
+}
+
+box-header,.box-header,
+box-contents,.box-contents,
+box-footer,.box-footer {
+  display: block;
+  width: 100%;
+}
+
+box-button,.box-button {
+  margin: 16px;
+  margin-bottom: 0;
+  padding: 8px 16px;
+  font-size: 16px;
+  height: 32px;
+  font-weight: bold;
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: .09em;
+  line-height: 1em;
+  cursor: pointer;
+  border-width: 2px;
+  border-style: solid;
+  text-align: center;
+}
+box-button:hover,.box-button:hover {
+  color: rgb(255,255,255);
+}
+
+box-menu, .box-menu {
+  position: fixed;
+  left: -241px;
+  top: 0;
+  display: block;
+  height: 100vh;
+  width: 240px;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  max-height: none;
+  margin: 0;
+  background: inherit;
+  transition: .52s;
+  opacity: .95;
+  box-shadow: rgba(0,0,0,.45) 0 0 1px;
+  z-index: 4000;
+}
+box-menu.menuExpanded, .box-menu.menuExpanded {
+  left: 0;
+}
+  box-menu ul, .box-menu ul {
+    left: 0;
+    padding: 80px 0 0 0;
+    margin: 0;
+    display: block;
+    max-height: none;
+  }
+    box-menu ul li, .box-menu ul li {
+      /* background: rgb(255,255,255); */
+      color: rgb(255,255,255);
+      /* border-bottom: rgb(255,255,255) solid 2px; */
+      font-size: 16px;
+      line-height: 1em;
+      margin: 0 32px 16px 32px;
+      width: 176px;
+      height: auto;
+      display: inline-block;
+      padding: 8px 8px 0px 8px;
+      max-height: none;
+      font-weight: bold;
+      cursor: pointer;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: .09em;
+    }
+    box-menu ul li:after, .box-menu ul li:after {
+      content: '';
+      display: block;
+      width: 2px;
+      background: rgb(255,255,255);
+      height: 2px;
+      margin: 0 auto;
+      margin-top: 6px;
+      transition: .22s;
+    }
+    box-menu ul li:hover:after, .box-menu ul li:hover:after {
+      width: 100%;
+    }
+
+box-header,.box-header {
+  padding: 16px;
+  top: 0;
+  left: 0;
+  position: fixed;
+  height: 64px;
+  background: inherit;
+  z-index: 5000;
+  opacity: .95;
+  transition: .32s;
+  overflow: hidden;
+  box-shadow: rgba(0,0,0,.45) 0 0 1px;
+}
+  box-header *, .box-header * {
+    opacity: 1;
+    margin-right: 16px;
+    vertical-align: top;
+    max-height: 48px;
+  }
+  box-header h1, .box-header h1 {
+    line-height: calc(1em + 1em / 3 + 2px);
+    font-size: 24px;
+    text-align: center;
+    margin-right: 0;
+  }
+  box-header box-button, .box-header box-button {
+    display: block;
+    position: fixed;
+    padding: 0;
+    top: 0;
+    left: 0;
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    text-align: center;
+  }
+    box-header box-button svg, .box-header box-button svg {
+      transition: .22s;
+      fill: inherit;
+      position: absolute;
+      left: 0;
+    }
+    box-header box-button svg:nth-child(2n), .box-header box-button svg:nth-child(2n) {
+      -webkit-transform: rotateY(-90deg);
+    }
+    box-header.menuExpanded box-button svg:nth-child(2n), .box-header.menuExpanded box-button svg:nth-child(2n) {
+      -webkit-transform: rotateY(0);
+    }
+    box-header.menuExpanded box-button svg:nth-child(2n-1), .box-header.menuExpanded box-button svg:nth-child(2n-1) {
+      -webkit-transform: rotateY(-90deg);
+    }
+
+box-contents, .box-contents {
+  font-size: 0;
+  margin-top: 64px;
+}
+
+/*panelはcard*/
+
+box-panel, .box-panel {
+  width: 100%;
+  /* margin: 16px 16px 0 16px; */
+  display: block;
+  clear: both;
+  padding: 32px 16px 0 16px;
+}
+  box-panel h2, .box-panel h2 {
+    font-size: 16px;
+    line-height: 1em;
+    letter-spacing: .1em;
+    display: block;
+    margin: 0 0 16px 0;
+  }
+  box-panel p, .box-panel p {
+    font-size: 16px;
+    font-weight: lighter;
+  }
+  box-panel box-img, .box-panel box-img {
+    background: rgba(0,0,0,.1);
+    height: 160px;
+    overflow: hidden;
+    width: 100%;
+    display: block;
+    text-align: center;
+    vertical-align: middle;
+  }
+    box-panel box-img img, .box-panel box-img img {
+      width: 100%;
+      margin-top: -25%;
+      transition: .42s;
+      p-webkit-filter: grayscale(100%);
+    }
+    box-panel box-img img:hover, .box-panel box-img img:hover {
+      transition: .22s;
+      width: 100%;
+      /* margin-top: -80px; */
+      p-webkit-filter: grayscale(0);
+    }
+box-panel.split, .box-panel.split {
+  width: 50%;
+  float: left;
+  /* margin: 16px 16px 0 16px; */
+  clear: none;
+}
+  box-panel.split box-img, .box-panel.split box-img {
+    background: rgba(0,0,0,.1);
+    height: 160px;
+    overflow: hidden;
+    width: 100%;
+    display: block;
+    text-align: center;
+  }
+    box-panel.split box-img img, .box-panel.split box-img img {
+      width: 100%;
+      /* margin-top: -30vmin; */
+    }
+
+box-footer,.box-footer {
+  height: 100vh;
+  padding-top: 45vh;
+}
+  box-footer p, .box-footer p {
+    line-height: 2em;
+  }
+
+
+box-text h1:before {
+  content: "TITLE";
+  font-size: 12px;
+  letter-spacing: .8em;
+  display: block;
+  width: 100%;
+  font-weight: bold;
+}
+
+box-text h1 {
+  width: 100%;
+  line-height: 1em;
+  font-size: 32px;
+}
+
+box-text h1:after {
+  border-top: rgb(0,150,80) solid 1px;
+  margin: 16px 0 8px 0;
+  content: "ARTICLE";
+  font-size: 12px;
+  letter-spacing: .8em;
+  display: block;
+  font-weight: bold;
+  width: 100%;
+}
+
+box-text h2 {
+  margin: 0;
+  font-weight: 100;
+}
+
+box-text a {
+  color: rgb(0,150,80);
+}
+
+box-text pre {
+  background: rgba(0,150,80,.1);
+  border: rgb(0,150,80) solid 1px;
+  border-radius: 2px;
+  padding: 16px;
+  max-width: calc(100vw - 32px);
+  overflow: scroll;
+}
+
+box-text pre *,
+box-text ol *,
+box-text ul *,
+code {
+  font-family: "Roboto Mono", "GenWeb", "Roboto", sans-serif;
+}
+
+box-panel ul li a {
+  display: block;
+  border-bottom: rgb(0,150,80) solid 1px;
+  padding: 16px;
+  margin: 0 16px;
+  transition: .02s;
+}
+box-panel ul li a:hover {
+  background: rgb(0,150,80);
+  color: rgb(255,255,255);
+  transition: .02s;
+}
+box-panel ul li ul .date {
+  list-style-type: none;
+  color: rgb(0,0,0);
+  text-align: left;
+  margin-left: 32px;
+  font-size: 12px;
+  letter-spacing: .5em;
+  width: 100%;
+}
+
+box-text .date {
+  font-size: 12px;
+  letter-spacing: .5em;
+  display: block;
+  width: 100%;
+  font-weight: bold;
+  color: rgb(0,150,80);
+}
+
+box-panel {
+  padding: 0;
+  padding-top: 16px;
+  margin: 0;
+}
+
+box-panel ul {
+  margin: 0;
+  padding: 0;
+}
+
+code {
+  color: rgb(0,150,80);
+  border: 1px rgb(0,150,80) solid;
+  border-radius: 2px;
+  padding: 0 8px;
+  margin: 0 8px;
+  background: rgba(0,150,80,.1);
+}
+
+box-text pre code {
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  color: rgb(50,50,50);
+}
+
+box-text img {
+  max-width: 100%;
+}
